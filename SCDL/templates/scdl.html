@@ -31,7 +31,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="scURL" placeholder="Paste Soundcloud Link Here...">
+                        <input type="text" class="form-control" name="scURL" placeholder="Paste Soundcloud Link Here...">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-primary" id="downloadButton">Download</button>
                         </div>
@@ -40,6 +40,13 @@
             </div>
         </div>
     </form>
+
+    <div style="align-items: center;">
+    {% if messages %}
+        {{ message }}
+    {% endif %}
+    </div>
+
 
     <div class="mainText">
         <h1 class="headerFlyIn" style="margin-top: 120px;"><strong>Recent Downloads</strong></h1>

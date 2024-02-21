@@ -67,6 +67,17 @@ body {
     to { left: 0%;}
 }
 
+.message-container {
+    text-align: center;
+}
+
+.message {
+    margin-top: 10px; /* Add some top margin for spacing */
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
 body .mainText {
     margin-top: 40px; 

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import SCDownload
+import os
+import subprocess
 
 def main(request):
     # request object has many members such as session and user information
@@ -10,15 +11,14 @@ def main(request):
 def download(request):
     if request.method == 'POST':
         
-        form = SCDownload(request.POST)
-        
         # get the playlist name
-        playlistName = request.POST.get('scURL')
+        scURL = request.POST.get('scURL')
         
-        print(playlistName)
+        # Download
+        command = ["scdl", "--path", "/media/Music", "-l", scURL]
+        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         
-        
-        messages.success(request, "Download successful!")
+        messages.success(request, "Download Underway...!")
         
         return redirect('SCDL')
     else:
