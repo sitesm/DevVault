@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home_page',
+    'SCDL',
 ]
 
 MIDDLEWARE = [
@@ -117,6 +119,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Specify additional directories where Django should look for static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Default static directory
+    os.path.join(BASE_DIR, 'SCDL', 'static'),  # CSS Dir for SCDL
+    os.path.join(BASE_DIR, 'home_page', 'static'),  # CSS Dir for home_page
+    os.path.join(BASE_DIR, 'static', 'common_static'),  # Commonly used static files directory
+    
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

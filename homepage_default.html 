@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .topRectangle {
+            background-color: #2768bf;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+            padding: 10px 20px; 
+            border-bottom-left-radius: 8px; 
+            border-bottom-right-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            color: #fff; 
+        }
+
+        .imageContainer {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        /* Sytle the href tag */
+        .topRectangle a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            font-weight: bold; 
+            font-size: 30px;
+            transition: all 0.1s;
+        }
+
+        .topRectangle a:hover {
+            text-decoration: underline;
+            font-size: 40px;
+        }
+        
+        .logoTopLeft {
+            position: absolute;
+            top: -85px;
+            left: 0;
+            width: 180px;
+            height: auto;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #2768bf;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    {% load static %}
+</head>
+
+<body>
+
+    <div class="topRectangle">
+        <div class="imageContainer">
+            <img src="{% static 'Boof_Bros_Logo.png' %}" alt="My Image" class="logoTopLeft">
+        </div>
+        <a href="#">About</a>
+        <a href="{% url 'SCDL' %}">SCDL</a>
+        <a href="#">Macro Calculator</a>
+    </div>
+
+
+    <footer>
+        &copy; 2024 Boof Bros Inc. All rights reserved.
+    </footer>
+
+</body>
+</html>

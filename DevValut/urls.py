@@ -19,8 +19,12 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from django.conf import settings
 from home_page import views as home_views # always need to import the views
+from SCDL import views as scdl_views # always need to import the views
+
 
 urlpatterns = [
-    path("", home_views.home, name="home"),
+    path("", home_views.home, name="home"), # home_page
+    path("SCDL/", scdl_views.main, name="SCDL"), # Main SCDL page
+    path("SCDL/download", scdl_views.download, name="SCDL_download"), # SCDL downlaod page (redirs back to main SCDL)
     path("admin/", admin.site.urls),
 ]
